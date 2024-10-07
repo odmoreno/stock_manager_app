@@ -8,3 +8,5 @@ Principales características :
 - Tailwind CSS
 - Axios : manejar las solicitudes HTTP y comunicarse con la API backend
 - Valibot : validar y transformar los datos en tiempo real antes de ser enviados a la API
+
+[Backend Repo](https://github.com/odmoreno/stock_controller_api/tree/main) : StockControllerAPI
