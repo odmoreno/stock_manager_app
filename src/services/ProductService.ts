@@ -1,4 +1,4 @@
-import { safeParse, pipe, parse, number, transform, union, string } from "valibot";
+import { safeParse } from "valibot";
 import { DraftProductSchema, Product, ProductSchema, ProductsSchema } from "../types"
 import axios from "axios";
 import { toBoolean } from "../utils";
@@ -61,18 +61,9 @@ export async function getProductById(id: Product['id']) {
 export async function updateProduct(data: ProductData, id: Product['id']) {
     try {
         console.log(data)
-        //const NumberSchema = pipe(union([string(), number()]), transform((input) => {
-        //    const parsedValue = parseInt(input, 10);
-        //    if (isNaN(parsedValue)) {
-        //        throw new Error("Invalid integer");
-        //    }
-        //    return parsedValue;
-        //}))
-
         const result = safeParse(ProductSchema, {
             id,
             name: data.name,
-            //price: parse(NumberSchema, data.price),
             price: +data.price,
             availability: toBoolean(data.availability.toString())
         })
